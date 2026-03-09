@@ -163,7 +163,7 @@ cat>/opt/gost.json<<EOF
       "handler": {
         "type": "socks5"
       }
-    },
+    }
   ]
 }
 EOF
