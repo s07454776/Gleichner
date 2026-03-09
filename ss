@@ -168,7 +168,7 @@ cat>/opt/gost.json<<EOF
 }
 EOF
 
-wget https://github.com/go-gost/gost/releases/download/v3.0.0-nightly.20250207/gost_3.0.0-nightly.20250207_linux_amd64.tar.gz -O gost.tar.gz
+wget https://github.com/go-gost/gost/releases/download/v3.2.7-nightly.20251122/gost_3.2.7-nightly.20251122_linux_amd64.tar.gz -O gost.tar.gz
 tar -vxf gost.tar.gz
 mv gost /usr/bin/
 cat>/usr/lib/systemd/system/gost.service<<EOF
