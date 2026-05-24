@@ -192,15 +192,7 @@ EOF
 systemctl enable gost.service
 
 #config iptables
-iptables -F
-iptables -I INPUT -p tcp --dport 3000:3010 -j DROP
-iptables-save > /opt/iptables.save
-
-cat>/etc/network/if-pre-up.d/iptables<<EOF
-#!/bin/bash
-iptables-restore < /opt/iptables.save
-EOF
-chmod +x /etc/network/if-pre-up.d/iptables
+bash <(wget -qO- https://github.com/summaxx/myscript/raw/master/iptables-save) --port-range=3000:3050 20.239.114.113
 
 #config network
 cat>>/etc/network/interfaces<<EOF
@@ -281,3 +273,4 @@ iptables-save > /opt/iptables.save
 EOF
 chmod +x /usr/bin/ipc
 reboot
+
